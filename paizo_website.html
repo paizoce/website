@@ -1,4 +1,184 @@
-<!DOCTYPE html> 
-<h2 style="text-align: center;">Welcome to the</h2>
-<h1 style="font-size: 400px; text-align: center">Paizo</h1>
-<h3 style="text-align: center;">Chamber Ensemble Official Website</h3>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Paizo Chamber Ensemble</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+      background-color: #f5f5f5;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    header {
+      background-color: #1a1a1a;
+      color: #fff;
+      padding: 2rem 1rem;
+      text-align: center;
+      position: relative;
+    }
+
+    header h1 {
+      font-size: 2.5rem;
+      margin-bottom: 0.5rem;
+    }
+
+    header p {
+      font-size: 1.2rem;
+      color: #ccc;
+    }
+
+    /* Logo Placeholder */
+    .logo-placeholder {
+      position: absolute;
+      top: 1rem;
+      left: 1rem;
+      width: 100px;
+      height: 50px;
+      background-color: #444;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #ccc;
+      font-size: 0.8rem;
+      border-radius: 5px;
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      background: #333;
+    }
+
+    nav a {
+      color: #f2f2f2;
+      padding: 1rem;
+      text-decoration: none;
+      transition: background 0.3s;
+    }
+
+    nav a:hover {
+      background: #555;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: 2rem auto;
+      padding: 1rem;
+    }
+
+    section {
+      margin-bottom: 2rem;
+    }
+
+    .highlight {
+      background: #e0e0e0;
+      padding: 1rem;
+      border-left: 5px solid #444;
+    }
+
+    .button {
+      display: inline-block;
+      background: #444;
+      color: #fff;
+      padding: 0.75rem 1.5rem;
+      text-decoration: none;
+      border-radius: 5px;
+      margin-top: 1rem;
+    }
+
+    .button:hover {
+      background: #000;
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem 1rem;
+      background: #1a1a1a;
+      color: #ccc;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <!-- Logo placeholder - replace this div with your logo image -->
+    <div class="logo-placeholder">LOGO</div>
+
+    <h1>Paizo Chamber Ensemble</h1>
+    <p>Where Passion Finds Rhythm</p>
+  </header>
+
+  <nav>
+    <a href="#about">About</a>
+    <a href="#events">Events</a>
+    <a href="#join">Join Us</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <div class="container">
+    <section id="about">
+      <h2>About Us</h2>
+      <p class="highlight">
+        Paizo Chamber Ensemble is a community of music lovers, performers, and creators. We bring together instrumentalists, vocalists, and producers from all backgrounds to share their talent and learn from each other.
+      </p>
+    </section>
+
+    <section id="events">
+      <h2>Upcoming Events</h2>
+      <ul>
+        <li><strong>Open Mic Night</strong> - July 15</li>
+        <li><strong>Songwriting Workshop</strong> - August 2</li>
+        <li><strong>Live Jam Session</strong> - September 10</li>
+      </ul>
+    </section>
+
+    <section id="join">
+      <h2>Join the Club</h2>
+      <p>
+        Whether you're a beginner or a seasoned artist, we welcome you to Paizo Chamber Ensemble! Join us to collaborate, perform, and grow together.
+      </p>
+      <a href="#" class="button">Sign Up</a>
+    </section>
+
+    <section id="contact">
+      <h2>Contact Us</h2>
+      <form onsubmit="submitForm(event)">
+        <label for="name">Name:</label><br />
+        <input type="text" id="name" name="name" required><br /><br />
+
+        <label for="email">Email:</label><br />
+        <input type="email" id="email" name="email" required><br /><br />
+
+        <label for="message">Message:</label><br />
+        <textarea id="message" name="message" rows="5" required></textarea><br /><br />
+
+        <button type="submit" class="button">Send Message</button>
+      </form>
+    </section>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 Paizo Chamber Ensemble. All rights reserved.</p>
+  </footer>
+
+  <script>
+    function submitForm(event) {
+      event.preventDefault();
+      const name = document.getElementById('name').value;
+      const email = document.getElementById('email').value;
+      const message = document.getElementById('message').value;
+
+      console.log(`Name: ${name}\nEmail: ${email}\nMessage: ${message}`);
+      alert("Thanks for reaching out! We'll get back to you soon.");
+    }
+  </script>
+</body>
+</html>
