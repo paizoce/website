@@ -3,8 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>PAGE NAME HERE</title>
+  <title>Paizo Chamber Ensemble</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;700&display=swap" rel="stylesheet">
   <style>
     :root {
@@ -19,6 +21,10 @@
       padding: 0;
       box-sizing: border-box;
       font-family: 'Ubuntu', sans-serif;
+    }
+
+    html {
+      scroll-behavior: smooth;
     }
 
     body, html {
@@ -42,25 +48,17 @@
     }
 
     .logo {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-
-    .logo img {
-      height: 50px;
-    }
-
-    .logo span {
-      color: var(--accent-color);
       font-size: 1.8rem;
       font-weight: bold;
+      color: var(--accent-color);
+      letter-spacing: 1px;
     }
 
     .nav-links {
       display: flex;
       gap: 1.5rem;
       align-items: center;
+      flex-wrap: wrap;
     }
 
     .nav-links a {
@@ -99,18 +97,235 @@
 
     .dropdown-content a:hover {
       background-color: var(--accent-color);
-      color: black;
+      color: #000;
     }
 
     .dropdown:hover .dropdown-content {
       display: block;
+    }
+
+    .hero {
+      height: 100vh;
+      background-image: linear-gradient(to top, rgba(26, 26, 26, 0.7), rgba(26, 26, 26, 0.3)), url('https://via.placeholder.com/1920x1080');
+      background-size: cover;
+      background-position: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
+
+    .hero h1 {
+      font-size: 4rem;
+      margin-bottom: 1rem;
+      color: white;
+      text-shadow: 2px 2px 10px black;
+      animation: popIn 1.5s ease;
+    }
+
+    .hero p {
+      font-size: 1.5rem;
+      color: var(--accent-color);
+      animation: fadeInUp 2s ease;
+    }
+
+    @keyframes popIn {
+      0% { transform: scale(0.9); opacity: 0; }
+      100% { transform: scale(1); opacity: 1; }
+    }
+
+    @keyframes fadeInUp {
+      0% { transform: translateY(20px); opacity: 0; }
+      100% { transform: translateY(0); opacity: 1; }
+    }
+
+    section {
+      padding: 4rem 2rem;
+    }
+
+    .stats {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 3rem;
+      background: #111;
+    }
+
+    .counter {
+      text-align: center;
+      font-size: 2rem;
+    }
+
+    .counter span {
+      font-size: 3rem;
+      display: block;
+      color: var(--accent-color);
+    }
+
+    .gallery {
+      background-color: #1e1e1e;
+      text-align: center;
+    }
+
+    .gallery h2 {
+      margin-bottom: 2rem;
+      color: var(--accent-color);
+      font-size: 2.5rem;
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 1.5rem;
+      margin-bottom: 3rem;
+    }
+
+    .gallery-grid img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 10px;
+      transition: transform 0.3s ease;
+    }
+
+    .gallery-grid img:hover {
+      transform: scale(1.05);
+    }
+
+    .gallery-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+    }
+
+    .gallery-buttons a {
+      padding: 1rem 2rem;
+      background-color: var(--accent-color);
+      color: #000;
+      border-radius: 5px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background 0.3s ease;
+    }
+
+    .gallery-buttons a:hover {
+      background-color: #20a399;
+    }
+
+    .about-section {
+      max-width: 900px;
+      margin: 0 auto;
+      text-align: center;
+      line-height: 1.7;
+    }
+
+    .about-section h2 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      color: var(--accent-color);
+    }
+
+    .about-section p {
+      font-size: 1.1rem;
+      opacity: 0.9;
+    }
+
+    .features {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      margin-top: 3rem;
+    }
+
+    .feature {
+      width: 250px;
+      padding: 1.5rem;
+      background: #222;
+      margin: 1rem;
+      border-radius: 10px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .feature:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+    }
+
+    .feature i {
+      font-size: 2rem;
+      color: var(--accent-color);
+      margin-bottom: 1rem;
+    }
+
+    .feature h3 {
+      margin-bottom: 0.5rem;
+      color: white;
+    }
+
+    .feature p {
+      font-size: 0.95rem;
+      opacity: 0.85;
+    }
+
+    .cta-section {
+      background: #101010;
+      text-align: center;
+    }
+
+    .cta-section h2 {
+      font-size: 2.2rem;
+      color: var(--accent-color);
+      margin-bottom: 1rem;
+    }
+
+    .cta-section a {
+      display: inline-block;
+      margin: 1rem;
+      padding: 1rem 2rem;
+      background: var(--accent-color);
+      color: #000;
+      border-radius: 8px;
+      font-weight: bold;
+      transition: background 0.3s ease;
+      text-decoration: none;
+    }
+
+    .cta-section a:hover {
+      background: #20a399;
+    }
+
+    footer {
+      background: #111;
+      padding: 2rem 1rem;
+      text-align: center;
+      font-size: 0.9rem;
+      color: gray;
+    }
+
+    footer p span {
+      color: var(--accent-color);
+    }
+
+    @media screen and (max-width: 768px) {
+      .nav-links {
+        flex-direction: column;
+        gap: 0.5rem;
+      }
+      .features {
+        flex-direction: column;
+        align-items: center;
+      }
+      .feature {
+        width: 90%;
+      }
     }
   </style>
 </head>
 <body>
 <div class="navbar">
   <div class="logo" style="display: flex; align-items: center; gap: 10px;">
-    <img src="images/logo (1).png" alt="Paizo Logo" style="height: 55px; vertical-align: middle;">
+    <img src="images/logo.png" alt="Paizo Logo" style="height: 55px; vertical-align: middle;">
     <span style="color: var(--accent-color); font-size: 1.8rem; font-weight: bold;">Paizo</span>
   </div>
   <div class="nav-links">
@@ -123,15 +338,72 @@
         <a href="#">Heritage HS</a>
       </div>
     </div>
-    <a href="#tutoring">Tutoring</a>
-    <a href="#videos">Videos</a>
-    <a href="#contact">Contact</a>
+    <a href="#tutoring.html">Tutoring</a>
+    <a href="#videos.html">Videos</a>
+    <a href="#contact.html">Contact</a>
+    <a href="booking.html">Booking</a>
   </div>
 </div>
-
-  <div style="padding-top: 100px; text-align: center;">
-    <h1>add rest of text or whatever here</h1>
-    <p style="color: var(--accent-color); font-size: 1.2rem; margin-top: 1rem;">Coming soon: performances, tutoring events, and more!</p>
+    </div>
   </div>
+
+  <header class="hero">
+    <h1>Page Title</h1>
+    <p>Page Subtitle</p>
+  </header>
+
+<footer>
+  <section style="background-color: #181818; padding: 4rem 2rem;">
+    <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 2rem; max-width: 1200px; margin: auto;">
+      <div>
+        <h4 style="color: var(--accent-color); margin-bottom: 1rem;">Explore</h4>
+        <ul style="list-style: none; padding: 0;">
+          <li><a href="#about" style="color: white; text-decoration: none;">About Us</a></li>
+          <li><a href="#tutoring" style="color: white; text-decoration: none;">Free Tutoring</a></li>
+          <li><a href="#videos" style="color: white; text-decoration: none;">Performance Videos</a></li>
+          <li><a href="#" style="color: white; text-decoration: none;">Our Chapters</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 style="color: var(--accent-color); margin-bottom: 1rem;">Join Us</h4>
+        <ul style="list-style: none; padding: 0;">
+          <li><a href="#" style="color: white; text-decoration: none;">Membership Info</a></li>
+          <li><a href="#" style="color: white; text-decoration: none;">Volunteer</a></li>
+          <li><a href="#" style="color: white; text-decoration: none;">Donate Instruments</a></li>
+          <li><a href="#contact" style="color: white; text-decoration: none;">Get In Touch</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 style="color: var(--accent-color); margin-bottom: 1rem;">For Schools</h4>
+        <ul style="list-style: none; padding: 0;">
+          <li><a href="#" style="color: white; text-decoration: none;">Book a Performance</a></li>
+          <li><a href="#" style="color: white; text-decoration: none;">Host a Workshop</a></li>
+          <li><a href="#" style="color: white; text-decoration: none;">Outreach Program</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 style="color: var(--accent-color); margin-bottom: 1rem;">Connect</h4>
+        <ul style="list-style: none; padding: 0;">
+          <li><a href="https://www.youtube.com/@PaizoCE" style="color: white; text-decoration: none;" target="_blank">YouTube Channel</a></li>
+          <li><a href="#" style="color: white; text-decoration: none;">Instagram</a></li>
+          <li><a href="#" style="color: white; text-decoration: none;">Newsletter</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 style="color: var(--accent-color); margin-bottom: 1rem;">Contact Us</h4>
+        <ul style="list-style: none; padding: 0;">
+          <li><a href="#" style="color: white; text-decoration: none;">Email</a></li>
+          <li><a href="#" style="color: white; text-decoration: none;">Phone</a></li>
+        </ul>
+      </div>
+
+    </div>
+  </section>
+  <p style="margin-top: 2rem">&copy; 2025 <span style="color: var(--accent-color);">Paizo Chamber Ensemble</span>. Music that Connects Communities.</p>
+</footer>
 </body>
 </html>
